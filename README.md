@@ -1,5 +1,5 @@
 # Bitcoin-Ransomware-Classification
-# # Introduction
+#2 Introduction
 This project aims to identify ransomware-related Bitcoin addresses by analyzing transaction patterns of several features. The Bitcoin Heist Ransomware Address dataset:https://archive.ics.uci.edu/dataset/526/bitcoinheistransomwareaddressdataset, covering over 2.9 million transactions from 2009 to 2018, was used to extract relevant patterns.
 
 To tackle the challenge of identifying ransomware- related Bitcoin addresses, we first preprocess the dataset to extract relevant features and clean the data, then we experiment with oversampling minority classes and utilizing four different classification algorithms to evaluate their effectiveness in identifying malicious addresses. The algorithms tested include two decision- tree-based methods: Random Forest and LightGBM, along with SVM and DNNs.
