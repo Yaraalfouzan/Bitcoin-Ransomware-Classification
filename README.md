@@ -7,27 +7,27 @@ To tackle the challenge of identifying ransomware- related Bitcoin addresses, we
 ## Preprocessing: 
 
 1-Feature Engineering: <br/>
--Created two new features:
--Merge Intensity = weight × count
--Loop Complexity = looped × length
+-Created two new features: <br/>
+-Merge Intensity = weight × count <br/>
+-Loop Complexity = looped × length <br/>
 -Removed the address ID feature as it was not informative for pattern learning.
 
-2-Class Imbalance Handling:
--The dataset was heavily imbalanced, dominated by the white class (over 2.8 million samples).
-The white class (non-ransomware addresses) was excluded since it irrelevant for classifying different types of ransomeware .
--Classes with fewer than 100 samples were also removed.
+2-Class Imbalance Handling: <br/>
+-The dataset was heavily imbalanced, dominated by the white class (over 2.8 million samples). 
+The white class (non-ransomware addresses) was excluded since it irrelevant for classifying different types of ransomeware . <br/>
+-Classes with fewer than 100 samples were also removed. <br/>
 -Result: 8 ransomware-related classes remained with a total of 41,060 samples.
 
-3-Feature Scaling and Encoding:
-Applied z-score standardization to all features (zero mean, unit variance).
+3-Feature Scaling and Encoding: <br/>
+Applied z-score standardization to all features (zero mean, unit variance). <br/>
 Used label encoding to convert categorical class labels into integer values.
 
-4-Data Splitting:
-Performed stratified sampling to maintain class distribution:
-80% of data for training, 20% for testing.
+4-Data Splitting: <br/>
+Performed stratified sampling to maintain class distribution: <br/>
+80% of data for training, 20% for testing. <br/>
 The training set was further split: 80% training, 20% validation for hyperparameter tuning.
 
-## Classification algorithims performance analysis: 
+## Classification algorithims performance analysis: <br/>
 
 Different hyperprameter tuning was performed on each of the models; LightGBM emerged to be the top performer In the implementation it was subjected to the optimization of hyperparameters including the number of estimators, learning rate, number of leaves, subsampling rate , and column sampling rate; this was done by 10 randomized iterations and 3-fold cross-validation. The best configuration identified by the random search included the following hyperparameters: number of estimators set to 500,learning rate set to 0.2,number of leaves set to 100, subsampling rate set to 0.8, and column sampling rate set to 0.8.
 The model demonstrated near-perfect performance of 97.17% accuracy on the validation set.
