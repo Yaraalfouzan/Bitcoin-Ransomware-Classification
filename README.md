@@ -6,7 +6,7 @@ To tackle the challenge of identifying ransomware- related Bitcoin addresses, we
 
 ## Preprocessing: 
 
-1-Feature Engineering:
+1-Feature Engineering: /n
 -Created two new features:
 -Merge Intensity = weight × count
 -Loop Complexity = looped × length
